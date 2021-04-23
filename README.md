@@ -3,7 +3,7 @@
 ## 중간고사: *Strassen Algorithm*
 
 ### 1. Strassen Algorithm?
-Strassen Algorithm 이란 
+**Strassen Algorithm** 이란 
 
 ### 2. 코드설명
 
