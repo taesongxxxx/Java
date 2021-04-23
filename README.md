@@ -1,6 +1,6 @@
 # 컴퓨터 알고리즘
 
-## 중간고사: **Strassen Algorithm**
+## 중간고사: *Strassen Algorithm*
 
 ### 1. Strassen Algorithm
 
