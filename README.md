@@ -1,6 +1,6 @@
 # 컴퓨터 알고리즘
 
-## 중간고사: Strassen Algorithm 알고리즘에 대한 설명 및 코드 구현, 코드 성능분석
+## 중간고사: **Strassen Algorithm**
 
 ### 1. Strassen Algorithm
 
