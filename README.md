@@ -38,7 +38,16 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898400-7a5f9200-a498-11eb-9ac6-25ecb57dcd80.gif"></p>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898522-9cf1ab00-a498-11eb-8602-676736253971.gif"></p>
+
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898607-b4309880-a498-11eb-9615-557658bed8d9.gif"></p><br/>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115901707-7f264500-a49c-11eb-8562-7590145405d5.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115901882-bd236900-a49c-11eb-8ed6-f477f4270d5c.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115901953-d0cecf80-a49c-11eb-8d56-88274e20e995.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115902013-e47a3600-a49c-11eb-99cc-56dacfa758db.gif"></p>
 
 ## 2. 코드설명
 
