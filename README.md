@@ -1,6 +1,6 @@
 # 컴퓨터 알고리즘
 
-## 중간고사: *Strassen Algorithm*
+## 중간고사: *Strassen Algorithm* 설명 및 코드구현, 성능분석
 
 ## 1. Strassen Algorithm?
 ***Strassen Algorithm***은 행렬 곱셈 알고리즘으로 정의에 따라 두 행렬의 곱을 이용하면 <math> n^3 </math>
