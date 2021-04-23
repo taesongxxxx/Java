@@ -40,8 +40,6 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898607-b4309880-a498-11eb-9615-557658bed8d9.gif"></p>
 
-
-![CodeCogsEqn (17)](https://user-images.githubusercontent.com/82091824/115897715-afb7b000-a497-11eb-9903-50a956c512b5.gif)
 ## 2. 코드설명
 
 ## 3. 성능비교
