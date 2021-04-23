@@ -26,9 +26,22 @@
 ### (2) *Strassen Algorithm*을 이용한 행렬 곱
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115886929-601fb700-a48c-11eb-9b04-113a20819ce2.gif"></p>
 
-![CodeCogsEqn (16)](https://user-images.githubusercontent.com/82091824/115894697-85182800-a494-11eb-994e-a105e83fae3b.gif)
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115897959-fb6a5980-a497-11eb-86d5-4674664b67b6.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115897715-afb7b000-a497-11eb-9903-50a956c512b5.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898179-3a001400-a498-11eb-9261-4a9a5a012eff.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898302-5b610000-a498-11eb-97ad-61a59fac8c3b.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898400-7a5f9200-a498-11eb-9ac6-25ecb57dcd80.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898522-9cf1ab00-a498-11eb-8602-676736253971.gif"></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115898607-b4309880-a498-11eb-9615-557658bed8d9.gif"></p>
 
 
+![CodeCogsEqn (17)](https://user-images.githubusercontent.com/82091824/115897715-afb7b000-a497-11eb-9903-50a956c512b5.gif)
 ## 2. 코드설명
 
 ## 3. 성능비교
