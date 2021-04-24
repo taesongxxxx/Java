@@ -53,35 +53,128 @@
 ## 2. 코드설명
 (1) **행렬 값 입력 *Method***
 ```java
-
+   public static int[][] init_matrix(int n){
+        int [][] matrix = new int[n][n];
+        Random random = new Random();
+        for(int i=0; i<n; i++)
+            for(int j=0; j<n; j++)
+                matrix[i][j] = random.nextInt(10);
+        return matrix;
+    }
 ```
 (2) **행렬 값 출력 *Method***
 ```java
-
+void print_matrix(int[][] matrix){
+        for(int i=0; i<matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.printf("%d ", matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
 ```
 (3) **행렬 분할 *Method***
 ```java
-
+  public int[][] subM(int[][] matrix, int a, int b, int n){
+        int x= 0;
+        int y= 0;
+        int[][] subM = new int[n][n];
+        for(int i=a; i<a+n; i++) {
+            for (int j = b; j < b + n; j++) {
+                subM[x][y] = matrix[i][j];
+                y++;
+            }
+            y=0;
+            x++;
+        }
+        return subM;
+    }
 ```
 (4) **행렬 *Merge* *Method***
 ```java
-
+ public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
+        int[][] mergeM = new int[2*n][2*n];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++) {
+                mergeM[i][j] = c11[i][j];
+                mergeM[i][j+n] = c12[i][j];
+                mergeM[i+n][j] = c21[i][j];
+                mergeM[i+n][j+n] = c22[i][j];
+            }
+        }
+        return mergeM;
+    }
 ```
 (5) **행렬 곱셈 *Method***
 ```java
-
+public int[][] Mmul(int n,int[][] matrixA, int[][] matrixB){
+       int[][] Mmul = new int[n][n];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                for(int k=0; k<n; k++){
+                    Mmul[i][j] += matrixA[i][k]*matrixB[k][j];
+                }
+            }
+        }
+        return Mmul;
+    }
 ```
 (6) **행렬 덧셈 *Method***
 ```java
-
+ public int[][] Msum(int n,int[][] matrixA, int[][] matrixB){
+        int[][] Msum = new int[n][n];
+        for(int i=0; i<n; i++)
+            for(int j=0; j<n; j++){
+                Msum[i][j] = matrixA[i][j]+matrixB[i][j];
+            }
+        return Msum;
+    }
 ```
 (7) **행렬 뺄셈 *Method***
 ```java
-
+  public int[][] Msub(int n,int[][] matrixA, int[][] matrixB){
+        int[][] Msub = new int[n][n];
+        for(int i=0; i<n; i++)
+            for(int j=0; j<n; j++){
+                Msub[i][j] = matrixA[i][j]-matrixB[i][j];
+            }
+        return Msub;
 ```
 (8) ***Sutrassen Algortihm***
 ```java
+ public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
+        if(n < 2){
+            int[][] matrixC = Mmul(n,matrixA,matrixB);
+            return matrixC;
+        }
+        int k = n/2;
 
+        int[][] suba11 = subM(matrixA,0,0,k);
+        int[][] suba12 = subM(matrixA,0,k,k);
+        int[][] suba21 = subM(matrixA,k,0,k);
+        int[][] suba22 = subM(matrixA,k,k,k);
+
+        int[][] subb11 = subM(matrixB,0,0,k);
+        int[][] subb12 = subM(matrixB,0,k,k);
+        int[][] subb21 = subM(matrixB,k,0,k);
+        int[][] subb22 = subM(matrixB,k,k,k);
+
+        int[][] M1 = Strassen(k,Msum(k,suba11,suba22),Msum(k,subb11,subb22));
+        int[][] M2 = Strassen(k,Msum(k,suba21,suba22),subb11);
+        int[][] M3 = Strassen(k,suba11,Msub(k,subb12,subb22));
+        int[][] M4 = Strassen(k,suba22,Msub(k,subb21,subb11));
+        int[][] M5 = Strassen(k,Msum(k,suba11,suba12),subb22);
+        int[][] M6 = Strassen(k,Msub(k,suba21,suba11),Msum(k,subb11,subb12));
+        int[][] M7 = Strassen(k,Msub(k,suba12,suba22),Msum(k,subb21,subb22));
+
+        int[][] c11 = Msum(k,Msub(k,Msum(k,M1,M4),M5),M7);
+        int[][] c12 = Msum(k,M3,M5);
+        int[][] c21 = Msum(k,M2,M4);
+        int[][] c22 = Msum(k,Msub(k,Msum(k,M1,M3),M2),M6);
+
+        int[][] matrixC = merge_subM(k, c11, c12, c21, c22);
+        return matrixC;
+    }
 ```
 (9) ***Debugging***
 ```java
