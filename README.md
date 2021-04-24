@@ -140,7 +140,7 @@ public int[][] Mmul(int n,int[][] matrixA, int[][] matrixB){
             }
         return Msub;
 ```
-(8) ***Sutrassen Algortihm***
+(8) ***Strassen Algortihm***
 ```java
  public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
         if(n < 2){
