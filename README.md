@@ -233,6 +233,7 @@ suba22 = subM(matrixA,2,2,2);    // matrixA의 행 2~3, 열 2~3 값을 suba22에
 // martixA를 분할시 행 4번 인덱스, 열 4번 인덱스 누락되고 분할됨
 ```
 
+![412](https://user-images.githubusercontent.com/82091824/115960977-48f5cd80-a54f-11eb-8f69-cafe7b3e86f1.png)
 ## 3. 성능비교
 
 ## 4. 결론
