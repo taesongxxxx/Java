@@ -51,7 +51,7 @@
 - **위 과정을 재귀적으로 반복할 경우 ![CodeCogsEqn (29)](https://user-images.githubusercontent.com/82091824/115904518-d548b780-a49f-11eb-8236-ddb0b383eaf6.gif) 번의 연산이 필요하다.  ![CodeCogsEqn (30)](https://user-images.githubusercontent.com/82091824/115904895-4d16e200-a4a0-11eb-875d-1ef0ac6b3504.gif) 이므로, 시간복잡도는 약  ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif) 이다**
 
 ## 2. 코드설명
-(1) **행렬 값 입력 *Method***
+### (1) **행렬 값 입력 *Method***
 ```java
     public static int[][] init_matrix(int n){
         int [][] matrix = new int[n][n];
@@ -62,7 +62,7 @@
         return matrix;
     }
 ```
-(2) **행렬 값 출력 *Method***
+### (2) **행렬 값 출력 *Method***
 ```java
     void print_matrix(int[][] matrix){
         for(int i=0; i<matrix.length; i++) {
@@ -73,7 +73,7 @@
         }
     }
 ```
-(3) **행렬 분할 *Method***
+### (3) **행렬 분할 *Method***
 ```java
  public int[][] subM(int[][] matrix, int a, int b,int n){
         int x= 0;
@@ -89,7 +89,7 @@
         }
         return subM;
 ```
-(4) **행렬 *Merge* *Method***
+### (4) **행렬 *Merge* *Method***
 ```java
  public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
         n= c11.length;
@@ -104,7 +104,7 @@
         }
         return mergeM;
 ```
-(5) **행렬 곱셈 *Method***
+### (5) **행렬 곱셈 *Method***
 ```java
     public int[][] Mmul(int[][] matrixA, int[][] matrixB){
         int n = matrixA.length;
@@ -118,7 +118,7 @@
         }
         return Mmul;
 ```
-(6) **행렬 덧셈 *Method***
+### (6) **행렬 덧셈 *Method***
 ```java
    public int[][] Msum(int[][] matrixA, int[][] matrixB){
         int n = matrixA.length;
@@ -130,7 +130,7 @@
         return Msum;
     }
 ```
-(7) **행렬 뺄셈 *Method***
+### (7) **행렬 뺄셈 *Method***
 ```java
     public int[][] Msub(int[][] matrixA, int[][] matrixB){
         int n = matrixA.length;
@@ -141,7 +141,7 @@
             }
         return Msub;
 ```
-(8) ***Strassen Algortihm***
+### (8) ***Strassen Algortihm***
 ```java
     public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
 
@@ -178,7 +178,7 @@
     }
 
 ```
-(9) ***Debugging***
+### (9) ***Debugging***
 - **문제 발생: *n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 이상한 값이 출력됨.**
  
  *ex)*
