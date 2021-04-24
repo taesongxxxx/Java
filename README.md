@@ -220,17 +220,17 @@ A*B Strassen Algorithm
 141 144 145 109 94 115 125 195 
 
 ```
-- **행렬을 분열할때 행과 열의 마지막 인덱스는 누락되고 분할되어 발생하는 문제같음.**   
+- **행렬을 분할할때 행과 열의 마지막 인덱스는 누락되고 분할되어 발생하는 문제같음.**   
  
  *ex)*
 ```java
 if n = 5
 n/2 = 2
-suba11 = subM(matrixA,0,0,2);    // 행 0~1, 열 0~1
-suba12 = subM(matrixA,0,2,2);    // 행 0~1, 열 2~3
-suba21 = subM(matrixA,2,0,2);    // 행 2~3, 열 0~2
-suba22 = subM(matrixA,2,2,2);    // 행 2~3, 열 2~3
-// 행 4번, 열 4번 인덱스 누락됨
+suba11 = subM(matrixA,0,0,2);    // matrixA의 행 0~1, 열 0~1 값을 suba11에 입력
+suba12 = subM(matrixA,0,2,2);    // matrixA의 행 0~1, 열 2~3 값을 suba12에 입력
+suba21 = subM(matrixA,2,0,2);    // matrixA의 행 2~3, 열 0~2 값을 suba21에 입력
+suba22 = subM(matrixA,2,2,2);    // matrixA의 행 2~3, 열 2~3 값을 suba22에 입력
+// martixA를 분할시 행 4번 인덱스, 열 4번 인덱스 누락됨
 ```
 
 ## 3. 성능비교
