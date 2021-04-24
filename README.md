@@ -238,8 +238,8 @@ suba22 = subM(matrixA,2,2,2);    // matrixA의 행 2~3, 열 2~3 값을 suba22에
 ```java
 수정 전                                                   수정 후
 if(n < 2){                                                if(n < 2 || n % 2 != 0){
-    int[][] matrixC = Mmul(matrixA,matrixB);              int[][] matrixC = Mmul(matrixA,matrixB);
-    return matrixC;                                       return matrixC;
+    int[][] matrixC = Mmul(matrixA,matrixB);                  int[][] matrixC = Mmul(matrixA,matrixB);
+    return matrixC;                                           return matrixC;
 }                                                         }
 ```
 ## 3. 성능 분석
