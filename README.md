@@ -235,7 +235,8 @@ suba22 = subM(matrixA,2,2,2);    // matrixA의 행 2~3, 열 2~3 값을 suba22에
 // martixA를 분할시 행 4번 인덱스, 열 4번 인덱스 누락되고 분할됨
 ```
 
-![CodeCogsEqn (32)](https://user-images.githubusercontent.com/82091824/115961892-78a6d480-a553-11eb-9960-ee8ee90592aa.gif)   
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115961892-78a6d480-a553-11eb-9960-ee8ee90592aa.gif"></p>
+
 ### **(3) 문제 해결** 
  - **이 문제를 해결하기 위해 오른쪽 사진처럼 분할할 시 정사각행렬이 깨져 *Strassen Algorithm*이 돌아가질 않는다... 행렬을 정사각행렬로 변환해주는 추가적인 코드가 필요할 것 같다. *but* 내 코딩실력의 한계로 문제해결 불가... 그래서 일단은 *n*값에 홀수가 들어오면 기본 *Algorithm*으로 계산한 값을 return 하는 것으로 수정하였다. 나중에 내 코딩실력이 늘어나면 다시 수정하러 오겠다.**
 ```java
