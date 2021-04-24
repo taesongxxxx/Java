@@ -183,7 +183,6 @@
  
  *ex)*
 ``` java
-ex)
 n = 10
 
 행렬 A                    행렬 B
@@ -225,7 +224,6 @@ A*B Strassen Algorithm
  
  *ex)*
 ```java
-ex)
 if n = 5
 n/2 = 2
 suba11 = subM(matrixA,0,0,2);    // matrixA의 행 0~1, 열 0~1 값을 suba11에 입력
