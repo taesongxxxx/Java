@@ -230,7 +230,7 @@ suba11 = subM(matrixA,0,0,2);    // matrixA의 행 0~1, 열 0~1 값을 suba11에
 suba12 = subM(matrixA,0,2,2);    // matrixA의 행 0~1, 열 2~3 값을 suba12에 입력
 suba21 = subM(matrixA,2,0,2);    // matrixA의 행 2~3, 열 0~2 값을 suba21에 입력
 suba22 = subM(matrixA,2,2,2);    // matrixA의 행 2~3, 열 2~3 값을 suba22에 입력
-// martixA를 분할시 행 4번 인덱스, 열 4번 인덱스 누락됨
+// martixA를 분할시 행 4번 인덱스, 열 4번 인덱스 누락되고 분할됨
 ```
 
 ## 3. 성능비교
