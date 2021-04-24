@@ -79,7 +79,7 @@
 ```java
 
 ```
-(8) ***Sutrassel Algortihm***
+(8) ***Sutrassen Algortihm***
 ```java
 
 ```
