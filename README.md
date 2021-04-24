@@ -5,7 +5,7 @@
 ## 1. *Strassen Algorithm?*
 - ***Strassen Algorithm*** **은 행렬 곱셈 알고리즘으로 정의에 따라 두 행렬의 곱을 이용하면 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876342-26957e80-a481-11eb-887c-efc0b27350dd.gif)의 시간이 소모지만, 이 알고리즘을 이용하면 대략 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif)의 시간 복잡도가 걸린다.**
 
-### (1) 기본 Algorithm을 이용한 행렬 곱
+### (1) 기본 *Algorithm*을 이용한 행렬 곱
 <br><p align="center"><img src="https://user-images.githubusercontent.com/82091824/115886929-601fb700-a48c-11eb-9b04-113a20819ce2.gif"></p><br>
     
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115892111-ceb34380-a491-11eb-9c56-925150cd7399.gif"></p>
@@ -46,7 +46,7 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115902013-e47a3600-a49c-11eb-99cc-56dacfa758db.gif"></p><br/>
 
-- **기본 알고리즘으로 계산시 8번의 곱셈연산과 4번의 덧셈연산이 일어나는 반면, Strassen Algorithm을 이용하면 7번의 곱셈연산과 18번의 덧셈연산이 일어난다. 행렬이 커지면 일반적으로 곱셈보다는 덧셈의 연산속도가 더 빠르므로 행렬의 크기가 커질수록 Strassen Algorithm 의 효율이 좋아진다.**    
+- **기본 *Algorithm*으로 계산시 8번의 곱셈연산과 4번의 덧셈연산이 일어나는 반면, Strassen Algorithm을 이용하면 7번의 곱셈연산과 18번의 덧셈연산이 일어난다. 행렬이 커지면 일반적으로 곱셈보다는 덧셈의 연산속도가 더 빠르므로 행렬의 크기가 커질수록 *Strassen Algorithm* 의 효율이 좋아진다.**    
    
 - **위 과정을 재귀적으로 반복할 경우 ![CodeCogsEqn (29)](https://user-images.githubusercontent.com/82091824/115904518-d548b780-a49f-11eb-8236-ddb0b383eaf6.gif) 번의 연산이 필요하다.  ![CodeCogsEqn (30)](https://user-images.githubusercontent.com/82091824/115904895-4d16e200-a4a0-11eb-875d-1ef0ac6b3504.gif) 이므로, 시간복잡도는 약  ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif) 이다**
 
