@@ -233,7 +233,8 @@ suba22 = subM(matrixA,2,2,2);    // matrixA의 행 2~3, 열 2~3 값을 suba22에
 // martixA를 분할시 행 4번 인덱스, 열 4번 인덱스 누락되고 분할됨
 ```
 
-![412](https://user-images.githubusercontent.com/82091824/115960977-48f5cd80-a54f-11eb-8f69-cafe7b3e86f1.png)
+![412](https://user-images.githubusercontent.com/82091824/115960977-48f5cd80-a54f-11eb-8f69-cafe7b3e86f1.png)   
+- **이 문제를 해결하기 위해 오른쪽 사진처럼 분할할 시 정사각행렬이 깨져 Strassen Algorithm이 돌아가지 않음... 행렬을 정사각행렬로 변환해주는 추가적인 코드가 필요할 것 같음. but 내 코딩실력의 한계로 문제해결 불가...**
 ## 3. 성능비교
 
 ## 4. 결론
