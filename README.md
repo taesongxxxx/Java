@@ -179,7 +179,7 @@
 
 ```
 (9) ***Debugging***
-- ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 이상한 값이 뜨거나 에러 발생..
+- ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 이상한 값이 뜨거나 에러 발생..**
 ``` java
 ex)
 n = 10
@@ -219,6 +219,7 @@ A*B Strassen Algorithm
 141 144 145 109 94 115 125 195 
 
 ```
+- **문제점**
 
 ## 3. 성능비교
 
