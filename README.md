@@ -51,10 +51,42 @@
 - **위 과정을 재귀적으로 반복할 경우 ![CodeCogsEqn (29)](https://user-images.githubusercontent.com/82091824/115904518-d548b780-a49f-11eb-8236-ddb0b383eaf6.gif) 번의 연산이 필요하다.  ![CodeCogsEqn (30)](https://user-images.githubusercontent.com/82091824/115904895-4d16e200-a4a0-11eb-875d-1ef0ac6b3504.gif) 이므로, 시간복잡도는 약  ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif) 이다**
 
 ## 2. 코드설명
+(1) **행렬 값 입력 *Method***
 ```java
 
 ```
-- **디버깅**
+(2) **행렬 값 출력 *Method***
+```java
+
+```
+(3) **행렬 분할 *Method***
+```java
+
+```
+(4) **행렬 *Merge* *Method***
+```java
+
+```
+(5) **행렬 곱셈 *Method***
+```java
+
+```
+(6) **행렬 덧셈 *Method***
+```java
+
+```
+(7) **행렬 뺄셈 *Method***
+```java
+
+```
+(8) ***Sutrassel Algortihm***
+```java
+
+```
+(9) **디버깅**
+```java
+
+```
 
 ## 3. 성능비교
 
