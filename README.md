@@ -179,7 +179,7 @@
 
 ```
 (9) ***Error***
-- ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif)형태일때만 제대로 된 값이 출력되고, 그 외에는 이상한 값이 뜨거나 에러가뜬다..
+- ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 이상한 값이 뜨거나 에러가뜬다..**
 ```
 n=
 
