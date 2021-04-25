@@ -254,8 +254,8 @@ if(n < 2){                                                if(n < 2 || n % 2 != 0
     int[][] matrixC = Mmul(matrixA,matrixB);                  int[][] matrixC = Mmul(matrixA,matrixB);
     return matrixC;                                           return matrixC;
 }                                                         }
-```
-<br><br/>
+```     
+<br/>
 ## 4. 성능 분석
 
 ## 5. 결론
