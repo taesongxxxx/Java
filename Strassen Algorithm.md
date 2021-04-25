@@ -74,6 +74,7 @@
         }
     } 
 ``` 
+- **행렬을 입력받고 *for* 문을 이용해 행렬을 출력한다.**
 ### (3) **행렬 *Divide Method***
 ```java
  public int[][] subM(int[][] matrix, int a, int b,int n){
@@ -90,6 +91,7 @@
         }
         return subM;
 ```
+- 
 ### (4) **행렬 *Merge* *Method***
 ```java
     public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
@@ -105,6 +107,7 @@
         return mergeM;
     }
 ```
+- 
 ### (5) **행렬 x *Method***
 ```java
     public int[][] Mmul(int[][] matrixA, int[][] matrixB){
@@ -119,6 +122,7 @@
         return Mmul;
     }
 ```
+- 
 ### (6) **행렬 + *Method***
 ```java
     public int[][] Msum(int[][] matrixA, int[][] matrixB){
@@ -130,6 +134,7 @@
         return Msum;
     }
 ```
+- 
 ### (7) **행렬 - *Method***
 ```java
     public int[][] Msub(int[][] matrixA, int[][] matrixB){
@@ -141,6 +146,7 @@
         return Msub;
     }
 ```
+- 
 ### (8) ***Strassen Algorthm***
 ```java
     public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
@@ -178,8 +184,8 @@
     }
 
     }
-
 ```
+- 
 ## 3. ***Debugging***
 ### **(1) 문제 발생** 
 - ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 에러 발생.**
