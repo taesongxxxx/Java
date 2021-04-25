@@ -107,7 +107,7 @@
         return mergeM;
     }
 ```
-- **분할된 행렬 c11, c12, c21, c22를 하나의 행렬 C로 합친다. C = {{C11,C12},{C21,C22}}**
+- **분할된 행렬 c11, c12, c21, c22를 하나의 행렬 C로 합친다. C = {{c11,c12},{c21,c22}}**
 ### (5) **행렬 x *Method***
 ```java
     public int[][] Mmul(int[][] matrixA, int[][] matrixB){
