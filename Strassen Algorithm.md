@@ -212,14 +212,10 @@ A*B 기본 Algorithm
 207 210 172 198 125 263 139 180 159 215 
 
 A*B Strassen Algorithm
-128 178 179 104 97 98 126 177 
-278 248 210 234 212 216 182 259 
-207 167 102 136 195 110 107 173 
-96 96 105 88 64 104 115 168 
-219 227 245 189 186 177 195 247 
-196 230 170 190 135 129 183 231 
-235 232 232 188 188 173 174 247 
-141 144 145 109 94 115 125 195 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+	at Main.merge_subM(Main.java:43)
+	at Main.Strassen(Main.java:112)
+	at Main.main(Main.java:136)
 ```
  ### **(2) 문제 발생 이유** 
  - **행렬을 분할할때 행과 열의 마지막 인덱스는 누락되고 분할되어 발생하는 문제같다.**
