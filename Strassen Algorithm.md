@@ -91,7 +91,7 @@
         }
         return subM;
 ```
-- **입력받은 행렬을 분할한다. 입력받은 행렬의 1/4의 크기를 가진 행렬 subM을 생성한 뒤, for문을 이용해 subM\[0\~n]\[0\~n] = matrix\[a\~a+n]\[b\~b+n] 으로 초기화한다.**
+- **입력받은 행렬을 분할한다. 입력받은 행렬의 1/4의 크기를 가진 행렬 subM을 생성한 뒤, *for* 문을 이용해 subM\[0\~n]\[0\~n] = matrix\[a\~a+n]\[b\~b+n] 으로 초기화한다.**
 ### (4) **행렬 *Merge* *Method***
 ```java
     public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
@@ -122,7 +122,7 @@
         return Mmul;
     }
 ```
-- 
+- ***for* 문을 이용한 행렬 * 행렬
 ### (6) **행렬 + *Method***
 ```java
     public int[][] Msum(int[][] matrixA, int[][] matrixB){
@@ -134,7 +134,7 @@
         return Msum;
     }
 ```
-- 
+- ***for* 문을 이용한 행렬 + 행렬
 ### (7) **행렬 - *Method***
 ```java
     public int[][] Msub(int[][] matrixA, int[][] matrixB){
@@ -146,7 +146,7 @@
         return Msub;
     }
 ```
-- 
+- ***for* 문을 이용한 행렬 - 행렬
 ### (8) ***Strassen Algorthm***
 ```java
     public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
