@@ -91,7 +91,7 @@
         }
         return subM;
 ```
-- **입력받은 행렬을 분할한다. 입력받은 행렬의 1/4의 크기를 가진 행렬 subM을 생성한 뒤, for문을 이용해 subM{0~n}{0~n} = matrix{a~a+n}{b~b+n} 으로 초기화한다.**
+- **입력받은 행렬을 분할한다. 입력받은 행렬의 1/4의 크기를 가진 행렬 subM을 생성한 뒤, for문을 이용해 subM\[0\~n]\[0\~n] = matrix\[a\~a+n]\[b\~b+n] 으로 초기화한다.**
 ### (4) **행렬 *Merge* *Method***
 ```java
     public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
