@@ -62,7 +62,7 @@
         return matrix;
     }
 ```
-- **random 객체를 생성해 ![CodeCogsEqn (13)](https://user-images.githubusercontent.com/82091824/115889827-4338b300-a48f-11eb-8131-b8ed38a5dc13.gif) 행렬에 0~9사이의 난수를 input한다.
+- **random 객체를 생성해 ![CodeCogsEqn (13)](https://user-images.githubusercontent.com/82091824/115889827-4338b300-a48f-11eb-8131-b8ed38a5dc13.gif) 행렬에 0~9사이의 난수를 input한다.**
 ### (2) **행렬 값 *Print Method***
 ```java
     void print_matrix(int[][] matrix){
