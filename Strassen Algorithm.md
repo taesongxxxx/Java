@@ -255,7 +255,6 @@ if(n < 2){                                                if(n < 2 || n % 2 != 0
     return matrixC;                                           return matrixC;
 }                                                         }
 ```     
-<br/>
 ## 4. 성능 분석
 
 ## 5. 결론
