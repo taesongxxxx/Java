@@ -180,7 +180,7 @@
 ```
 ## 3. ***Debugging***
 ### **(1) 문제 발생** 
-- ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 이상한 값이 출력된다.**
+- ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 에러 발생.**
  
  *ex)*
 ``` java
@@ -211,14 +211,10 @@ A*B 기본 Algorithm
 207 210 172 198 125 263 139 180 159 215 
 
 A*B Strassen Algorithm
-128 178 179 104 97 98 126 177 
-278 248 210 234 212 216 182 259 
-207 167 102 136 195 110 107 173 
-96 96 105 88 64 104 115 168 
-219 227 245 189 186 177 195 247 
-196 230 170 190 135 129 183 231 
-235 232 232 188 188 173 174 247 
-141 144 145 109 94 115 125 195 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+	at Main.Msum(Main.java:68)
+	at Main.Strassen(Main.java:107)
+	at Main.main(Main.java:136)
 
 ```
  ### **(2) 문제 발생 이유** 
