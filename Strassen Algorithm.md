@@ -91,7 +91,7 @@
         }
         return subM;
 ```
-- 
+- **입력받은 행렬을 분할한다. 입력받은 행렬의 1/4의 크기를 가진 행렬 subM을 생성한 뒤, for문을 이용해 subM[0~n][0~n] = matrix[a~a+n][b~b+n] 값으로 초기화한다.
 ### (4) **행렬 *Merge* *Method***
 ```java
     public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
@@ -107,7 +107,7 @@
         return mergeM;
     }
 ```
-- 
+- **분할된 행렬 c11, c12, c21, c22를 하나의 행렬 C로 합친다. C = {{C11,C12},{C21,C22}}
 ### (5) **행렬 x *Method***
 ```java
     public int[][] Mmul(int[][] matrixA, int[][] matrixB){
