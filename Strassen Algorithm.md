@@ -91,9 +91,8 @@
 ```
 ### (4) **행렬 *Merge* *Method***
 ```java
- public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
-        n= c11.length;
-        int[][] mergeM = new int[2*n][2*n];
+    public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
+        int[][] mergeM = new int[n+n][n+n];
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++) {
                 mergeM[i][j] = c11[i][j];
@@ -103,28 +102,28 @@
             }
         }
         return mergeM;
+    }
 ```
 ### (5) **행렬 x *Method***
 ```java
     public int[][] Mmul(int[][] matrixA, int[][] matrixB){
-        int n = matrixA.length;
-        int[][] Mmul = new int[n][n];
-        for(int i=0; i<n; i++){
-            for(int j=0; j<n; j++){
-                for(int k=0; k<n; k++){
+        int[][] Mmul = new int[matrixA.length][matrixB[0].length];
+        for(int i=0; i<matrixA.length; i++){
+            for(int j=0; j<matrixB[0].length; j++){
+                for(int k=0; k<matrixB.length; k++){
                     Mmul[i][j] += matrixA[i][k]*matrixB[k][j];
                 }
             }
         }
         return Mmul;
+    }
 ```
 ### (6) **행렬 + *Method***
 ```java
-   public int[][] Msum(int[][] matrixA, int[][] matrixB){
-        int n = matrixA.length;
-        int[][] Msum = new int[n][n];
-        for(int i=0; i<n; i++)
-            for(int j=0; j<n; j++){
+    public int[][] Msum(int[][] matrixA, int[][] matrixB){
+        int[][] Msum = new int[matrixA.length][matrixA[0].length];
+        for(int i=0; i<matrixA.length; i++)
+            for(int j=0; j<matrixA[0].length; j++){
                 Msum[i][j] = matrixA[i][j]+matrixB[i][j];
             }
         return Msum;
@@ -133,19 +132,19 @@
 ### (7) **행렬 - *Method***
 ```java
     public int[][] Msub(int[][] matrixA, int[][] matrixB){
-        int n = matrixA.length;
-        int[][] Msub = new int[n][n];
-        for(int i=0; i<n; i++)
-            for(int j=0; j<n; j++){
+        int[][] Msub = new int[matrixA.length][matrixA[0].length];
+        for(int i=0; i<matrixA.length; i++)
+            for(int j=0; j<matrixA[0].length; j++){
                 Msub[i][j] = matrixA[i][j]-matrixB[i][j];
             }
         return Msub;
+    }
 ```
 ### (8) ***Strassen Algorthm***
 ```java
     public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
 
-        if(n < 2){
+        if(n < 2 || n % 2 != 0){
             int[][] matrixC = Mmul(matrixA,matrixB);
             return matrixC;
         }
@@ -173,8 +172,10 @@
         int[][] c21 = Msum(M2,M4);
         int[][] c22 = Msum(Msub(Msum(M1,M3),M2),M6);
 
-        int[][] matrixC = merge_subM(n/2, c11, c12, c21, c22);
+        int[][] matrixC = merge_subM(n/2,c11, c12, c21, c22);
         return matrixC;
+    }
+
     }
 
 ```
