@@ -185,7 +185,13 @@
 
     }
 ```
-- 
+- **if(n < 2 || n % 2 != 0) 기본 Algorithm으로 계산한 값을 return 한다.**
+- **else**
+- **matrixA와 matrixB를 subM Method를 이용해 각각 4개의 행렬로 분할한다.**
+- **행렬 M을 생성한 뒤 Strassen을 재귀호출 하면서 값을 초기화 한다.**
+- **행렬 c를 생성한 뒤 Msum, Msub Merthod를 이용해 행렬 M을 조합해 초기화 한다.**
+- **분할된 행렬 c11, c12 ,c21, c22를 merge_subM Method를 이용해 합병한 뒤 return한다.**
+
 ## 3. ***Debugging***
 ### **(1) 문제 발생** 
 - ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 에러 발생.**
