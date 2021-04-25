@@ -122,7 +122,7 @@
         return Mmul;
     }
 ```
-- ***for* 문을 이용한 행렬 * 행렬
+- ***for* 문을 이용한 행렬 * 행렬**
 ### (6) **행렬 + *Method***
 ```java
     public int[][] Msum(int[][] matrixA, int[][] matrixB){
@@ -134,7 +134,7 @@
         return Msum;
     }
 ```
-- ***for* 문을 이용한 행렬 + 행렬
+- ***for* 문을 이용한 행렬 + 행렬**
 ### (7) **행렬 - *Method***
 ```java
     public int[][] Msub(int[][] matrixA, int[][] matrixB){
@@ -146,7 +146,7 @@
         return Msub;
     }
 ```
-- ***for* 문을 이용한 행렬 - 행렬
+- ***for* 문을 이용한 행렬 - 행렬**
 ### (8) ***Strassen Algorthm***
 ```java
     public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
