@@ -49,6 +49,7 @@
 - **기본 *Algorithm*으로 계산시 8번의 곱셈연산과 4번의 덧셈연산이 일어나는 반면, Strassen Algorithm을 이용하면 7번의 곱셈연산과 18번의 덧셈연산이 일어난다. 행렬이 커지면 일반적으로 곱셈보다는 덧셈의 연산속도가 더 빠르므로 행렬의 크기가 커질수록 *Strassen Algorithm* 의 효율이 좋아진다.**    
    
 - **위 과정을 재귀적으로 반복할 경우 ![CodeCogsEqn (29)](https://user-images.githubusercontent.com/82091824/115904518-d548b780-a49f-11eb-8236-ddb0b383eaf6.gif) 번의 연산이 필요하다.  ![CodeCogsEqn (30)](https://user-images.githubusercontent.com/82091824/115904895-4d16e200-a4a0-11eb-875d-1ef0ac6b3504.gif) 이므로, 시간복잡도는 약  ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif) 이다**<br/>
+<br>
 ## 2. 코드설명
 ### (1) **행렬 값 *Input Method***
 ```java
@@ -190,7 +191,7 @@
 - **행렬 M을 생성한 뒤 Strassen을 재귀호출 하면서 값을 초기화 한다.**
 - **행렬 c를 생성한 뒤 Msum, Msub Merthod를 이용해 행렬 M을 조합해 초기화 한다.**
 - **분할된 행렬 c11, c12 ,c21, c22를 merge_subM Method를 이용해 합병한 뒤 return한다.**
-<br><br/>
+<br/>
 ## 3. ***Debugging***
 ### **(1) 문제 발생** 
 - ***n*값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 에러 발생.**
