@@ -185,7 +185,7 @@
 
     }
 ```
-- **if(n < 2 || n % 2 != 0) 기본 Algorithm으로 계산한 값을 return 한다.**
+- **if(n < 2 또는 n % 2 != 0) 기본 Algorithm으로 계산한 값을 return 한다.**
 - **else**
 - **matrixA와 matrixB를 subM Method를 이용해 각각 4개의 행렬로 분할한다.**
 - **행렬 M을 생성한 뒤 Strassen을 재귀호출 하면서 값을 초기화 한다.**
