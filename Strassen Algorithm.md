@@ -272,7 +272,7 @@ if(n < 2){                                                if(n < 2 || n % 2 != 0
 ### (1) 결과
 - 
 ### (2) 결론
-- **n이 1024이하의 값일때는 *Strassen Algorithm*이 기본 *Algorithm*보다 효율이 엄청 떨어지는 걸로 나왔다. 아마 내가 코드를 잘못 짰거나, *Strassen Algorithm*이 기본 *Algorithm*의 속도를 역전할라면 엄청 큰 *n*이 입력되어야 될 것으로 예상된다. *Strassen Algorithm*은 코드를 짜는것도 어렵고 기본 *Algorithm*이랑 비교해 성능이 더 좋은지도 잘 모르겠다.. 만약 내가 엄청 큰 행렬의 곱을 구하는 경우가 아니라면 기본 *Algorithm*으로 구현하는게 더 좋을 것 같다.
+- **n이 1024이하의 값일때는 *Strassen Algorithm*이 기본 *Algorithm*보다 효율이 엄청 떨어지는 걸로 나왔다. 아마 내가 코드를 잘못 짰거나, *Strassen Algorithm*이 기본 *Algorithm*의 속도를 역전할라면 엄청 큰 *n*이 입력되어야 될 것으로 예상된다. *Strassen Algorithm*은 코드를 짜는것도 어렵고 기본 *Algorithm*이랑 비교해 성능이 더 좋은지도 잘 모르겠다.. 만약 내가 엄청 큰 행렬의 곱을 구하는 경우가 아니라면 기본 *Algorithm*으로 구현하는게 더 좋을 것 같다.**
 
 ## 5. 전체 코드
 ```java
