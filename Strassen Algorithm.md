@@ -270,11 +270,208 @@ if(n < 2){                                                if(n < 2 || n % 2 != 0
         System.out.println("Strassen Algorithm: " + (finish2-start2) + "ms");
 ```
 ### (1) 결과
-- 
-### (2) 결론
-- **n이 1024이하의 값일때는 *Strassen Algorithm*이 기본 *Algorithm*보다 효율이 엄청 떨어지는 걸로 나왔다. 아마 내가 코드를 잘못 짰거나, *Strassen Algorithm*이 기본 *Algorithm*의 속도를 역전할라면 엄청 큰 n이 입력되어야 될 것으로 예상된다. *Strassen Algorithm*은 코드를 짜는것도 어렵고 기본 *Algorithm*이랑 비교해 성능이 더 좋은지도 잘 모르겠다.. 만약 내가 엄청 큰 행렬의 곱을 구하는 경우가 아니라면 기본 *Algorithm*으로 구현하는게 더 좋을 것 같다.**
-
-## 5. 전체 코드
+- **n = 2**
 ```java
+기본 Algorithm: 0ms
+Strassen Algorithm: 0ms
+```
+- **n = 4**
+```java
+기본 Algorithm: 0ms
+Strassen Algorithm: 0ms
+```
+- **n = 8**
+```java
+기본 Algorithm: 0ms
+Strassen Algorithm: 0ms
+```
+- **n = 16**
+```java
+기본 Algorithm: 0ms
+Strassen Algorithm: 6ms
+```
 
+- **n = 32**
+```java
+기본 Algorithm: 2ms
+Strassen Algorithm: 25ms
+```
+- **n = 64**
+```java
+기본 Algorithm: 8ms
+Strassen Algorithm: 176ms
+```
+- **n = 128**
+```java
+기본 Algorithm: 21ms
+Strassen Algorithm: 842ms
+```
+- **n = 256**
+```java
+기본 Algorithm: 40ms
+Strassen Algorithm: 3936ms
+```
+- **n = 512**
+```java
+기본 Algorithm: 272ms
+Strassen Algorithm: 28000ms
+```
+- **n = 1024**
+```java
+기본 Algorithm: 3856ms
+Strassen Algorithm: 169949ms
+```
+
+### (2) 결론
+- **n에 1024이하의 값이 입력될때는 *Strassen Algorithm*이 기본 *Algorithm*보다 효율이 많이 떨어지는 걸로 나왔다. 아마 내가 코드를 잘못 짰거나, *Strassen Algorithm*이 기본 *Algorithm*의 속도를 역전할라면 엄청 큰 n이 입력되어야 될 것으로 예상된다. *Strassen Algorithm*은 코드를 짜는것도 어렵고 기본 *Algorithm*이랑 비교해 성능이 더 좋은지도 잘 모르겠다.. 만약 내가 엄청 큰 행렬의 곱을 구하는 경우가 아니라면 기본 *Algorithm*으로 구현하는게 더 좋을 것 같다.**
+
+## 5. 소스 코드
+```java
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    //행렬 Input
+    public static int[][] init_matrix(int n){
+        int [][] matrix = new int[n][n];
+        Random random = new Random();
+        for(int i=0; i<n; i++)
+            for(int j=0; j<n; j++)
+                matrix[i][j] = random.nextInt(10);
+        return matrix;
+    }
+    //행렬 Print
+    void print_matrix(int[][] matrix){
+        for(int i=0; i<matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.printf("%d ", matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    //행렬 Divide
+    public int[][] subM(int[][] matrix, int a, int b,int n){
+        int x= 0;
+        int y= 0;
+        int[][] subM = new int[n][n];
+        for(int i=a; i<a+n; i++) {
+            for (int j = b; j <b+n; j++) {
+                subM[x][y] = matrix[i][j];
+                y++;
+            }
+            y=0;
+            x++;
+        }
+        return subM;
+    }
+    //행렬 Merge
+    public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
+        int[][] mergeM = new int[n+n][n+n];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++) {
+                mergeM[i][j] = c11[i][j];
+                mergeM[i][j+n] = c12[i][j];
+                mergeM[i+n][j] = c21[i][j];
+                mergeM[i+n][j+n] = c22[i][j];
+            }
+        }
+        return mergeM;
+    }
+    //행렬 * 행렬
+    public int[][] Mmul(int[][] matrixA, int[][] matrixB){
+        int[][] Mmul = new int[matrixA.length][matrixB[0].length];
+        for(int i=0; i<matrixA.length; i++){
+            for(int j=0; j<matrixB[0].length; j++){
+                for(int k=0; k<matrixB.length; k++){
+                    Mmul[i][j] += matrixA[i][k]*matrixB[k][j];
+                }
+            }
+        }
+        return Mmul;
+    }
+    //행렬 + 행렬
+    public int[][] Msum(int[][] matrixA, int[][] matrixB){
+        int[][] Msum = new int[matrixA.length][matrixA[0].length];
+        for(int i=0; i<matrixA.length; i++)
+            for(int j=0; j<matrixA[0].length; j++){
+                Msum[i][j] = matrixA[i][j]+matrixB[i][j];
+            }
+        return Msum;
+    }
+    //행렬 - 행렬
+    public int[][] Msub(int[][] matrixA, int[][] matrixB){
+        int[][] Msub = new int[matrixA.length][matrixA[0].length];
+        for(int i=0; i<matrixA.length; i++)
+            for(int j=0; j<matrixA[0].length; j++){
+                Msub[i][j] = matrixA[i][j]-matrixB[i][j];
+            }
+        return Msub;
+    }
+    //Strassen Algorithm
+    public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
+
+        if(n < 2 || n % 2 != 0){
+            int[][] matrixC = Mmul(matrixA,matrixB);
+            return matrixC;
+        }
+
+        int[][] suba11 = subM(matrixA,0,0,n/2);
+        int[][] suba12 = subM(matrixA,0,n/2,n/2);
+        int[][] suba21 = subM(matrixA,n/2,0,n/2);
+        int[][] suba22 = subM(matrixA,n/2,n/2,n/2);
+
+        int[][] subb11 = subM(matrixB,0,0,n/2);
+        int[][] subb12 = subM(matrixB,0,n/2,n/2);
+        int[][] subb21 = subM(matrixB,n/2,0,n/2);
+        int[][] subb22 = subM(matrixB,n/2,n/2,n/2);
+
+        int[][] M1 = Strassen(n/2,Msum(suba11,suba22),Msum(subb11,subb22));
+        int[][] M2 = Strassen(n/2,Msum(suba21,suba22),subb11);
+        int[][] M3 = Strassen(n/2,suba11,Msub(subb12,subb22));
+        int[][] M4 = Strassen(n/2,suba22,Msub(subb21,subb11));
+        int[][] M5 = Strassen(n/2,Msum(suba11,suba12),subb22);
+        int[][] M6 = Strassen(n/2,Msub(suba21,suba11),Msum(subb11,subb12));
+        int[][] M7 = Strassen(n/2,Msub(suba12,suba22),Msum(subb21,subb22));
+
+        int[][] c11 = Msum(Msub(Msum(M1,M4),M5),M7);
+        int[][] c12 = Msum(M3,M5);
+        int[][] c21 = Msum(M2,M4);
+        int[][] c22 = Msum(Msub(Msum(M1,M3),M2),M6);
+
+        int[][] matrixC = merge_subM(n/2,c11, c12, c21, c22);
+        return matrixC;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[][] matrixA = init_matrix(n);
+        int[][] matrixB = init_matrix(n);
+
+        Main test = new Main();
+
+        long start1 = System.currentTimeMillis();
+        int[][] matrixC = test.Mmul(matrixA,matrixB);
+        long finish1 = System.currentTimeMillis();
+
+        long start2 = System.currentTimeMillis();
+        int[][] matrixC2 = test.Strassen(n,matrixA,matrixB);
+        long finish2 = System.currentTimeMillis();
+
+        System.out.println("행렬 A");
+        test.print_matrix(matrixA);
+        System.out.println();
+        System.out.println("행렬 B");
+        test.print_matrix(matrixB);
+        System.out.println();
+        System.out.println("A*B 기본 Algorithm");
+        test.print_matrix(matrixC);
+        System.out.println();
+        System.out.println("A*B Strassen Algorithm");
+        test.print_matrix(matrixC2);
+        System.out.println();
+        System.out.println("기본 Algorithm: " + (finish1-start1) + "ms");
+        System.out.println("Strassen Algorithm: " + (finish2-start2) + "ms");
+    }
+}
 ```
