@@ -265,6 +265,9 @@ if(n < 2){                                                if(n < 2 || n % 2 != 0
         long start2 = System.currentTimeMillis();
         int[][] matrixC2 = test.Strassen(n,matrixA,matrixB);
         long finish2 = System.currentTimeMillis();
+	
+	System.out.println("기본 Algorithm: " + (finish1-start1) + "ms");
+        System.out.println("Strassen Algorithm: " + (finish2-start2) + "ms");
 ```
 ## 5. 결론
 
