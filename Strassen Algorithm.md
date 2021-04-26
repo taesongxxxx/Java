@@ -2,27 +2,44 @@
 
 ## 중간고사: *Strassen Algorithm* 설명 및 코드구현, 성능분석
 
+
+
 ## 1. *Strassen Algorithm?*
-- ***Strassen Algorithm*** **은 행렬 곱셈 알고리즘으로 정의에 따라 두 행렬의 곱을 이용하면 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876342-26957e80-a481-11eb-887c-efc0b27350dd.gif)의 시간이 소모지만, 이 알고리즘을 이용하면 대략 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif)의 시간 복잡도가 걸린다.**
+
+- ***Strassen Algorithm*** 은 행렬 곱셈 알고리즘으로 정의에 따라 두 행렬의 곱을 이용하면 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876342-26957e80-a481-11eb-887c-efc0b27350dd.gif)의 시간이 소모지만, 이 알고리즘을 이용하면 대략 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif)의 시간 복잡도가 걸린다.
+
+  
 
 ### (1) 기본 *Algorithm*을 이용한 행렬 곱
-<br><p align="center"><img src="https://user-images.githubusercontent.com/82091824/115886929-601fb700-a48c-11eb-9b04-113a20819ce2.gif"></p><br>
-    
+
+
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115886929-601fb700-a48c-11eb-9b04-113a20819ce2.gif"></p>    
+
+
+
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115892111-ceb34380-a491-11eb-9c56-925150cd7399.gif"></p>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115887747-331fd400-a48d-11eb-9d28-8bce60085689.gif"></p>
-   
+
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115887891-55195680-a48d-11eb-8970-9c36c787898e.gif"></p>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115888071-78440600-a48d-11eb-8d55-032b2ca2db1b.gif"></p>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115888168-94e03e00-a48d-11eb-817a-71cf9abc2f7e.gif"></p><br/>
 
-- **위 알고리즘으로 행렬의 곱을 계산하면 과정에서 8번의 곱셈연산과 4번의 덧셈연산이 일어난다.**   
-- **![CodeCogsEqn (13)](https://user-images.githubusercontent.com/82091824/115889827-4338b300-a48f-11eb-8131-b8ed38a5dc13.gif) 행렬과 ![CodeCogsEqn (13)](https://user-images.githubusercontent.com/82091824/115889827-4338b300-a48f-11eb-8131-b8ed38a5dc13.gif) 행렬의 곱일때, 시간복잡도는 ![CodeCogsEqn (14)](https://user-images.githubusercontent.com/82091824/115890032-78dd9c00-a48f-11eb-99a7-a3eeebc23c18.gif) 이다.**
+- 위 알고리즘으로 행렬의 곱을 계산하면 과정에서 8번의 곱셈연산과 4번의 덧셈연산이 일어난다. 
+- ![CodeCogsEqn (13)](https://user-images.githubusercontent.com/82091824/115889827-4338b300-a48f-11eb-8131-b8ed38a5dc13.gif) 행렬과 ![CodeCogsEqn (13)](https://user-images.githubusercontent.com/82091824/115889827-4338b300-a48f-11eb-8131-b8ed38a5dc13.gif) 행렬의 곱일때, 시간복잡도는 ![CodeCogsEqn (14)](https://user-images.githubusercontent.com/82091824/115890032-78dd9c00-a48f-11eb-99a7-a3eeebc23c18.gif) 이다.
+
+
 
 ### (2) *Strassen Algorithm*을 이용한 행렬 곱    
-<br><p align="center"><img src="https://user-images.githubusercontent.com/82091824/115886929-601fb700-a48c-11eb-9b04-113a20819ce2.gif"></p><br/>
+
+
+
+<p align="center"><img src="https://user-images.githubusercontent.com/82091824/115886929-601fb700-a48c-11eb-9b04-113a20819ce2.gif"></p>
+
+
 
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115897959-fb6a5980-a497-11eb-86d5-4674664b67b6.gif"></p>
 
@@ -46,11 +63,15 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115902013-e47a3600-a49c-11eb-99cc-56dacfa758db.gif"></p><br/>
 
-- **기본 *Algorithm*으로 계산시 8번의 곱셈연산과 4번의 덧셈연산이 일어나는 반면, Strassen Algorithm을 이용하면 7번의 곱셈연산과 18번의 덧셈연산이 일어난다. 행렬이 커지면 일반적으로 곱셈보다는 덧셈의 연산속도가 더 빠르므로 행렬의 크기가 커질수록 *Strassen Algorithm* 의 효율이 좋아진다.**    
-   
-- **위 과정을 재귀적으로 반복할 경우 ![CodeCogsEqn (29)](https://user-images.githubusercontent.com/82091824/115904518-d548b780-a49f-11eb-8236-ddb0b383eaf6.gif) 번의 연산이 필요하다.  ![CodeCogsEqn (30)](https://user-images.githubusercontent.com/82091824/115904895-4d16e200-a4a0-11eb-875d-1ef0ac6b3504.gif) 이므로, 시간복잡도는 약  ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif) 이다**
-<br><br/>
+- **기본 Algorithm**으로 계산시 8번의 곱셈연산과 4번의 덧셈연산이 일어나는 반면, **Strassen Algorithm**을 이용하면 7번의 곱셈연산과 18번의 덧셈연산이 일어난다. 행렬이 커지면 일반적으로 곱셈보다는 덧셈의 연산속도가 더 빠르므로 행렬의 크기가 커질수록 **Strassen Algorithm** 의 효율이 좋아진다.   
+
+- 위 과정을 재귀적으로 반복할 경우 ![CodeCogsEqn (29)](https://user-images.githubusercontent.com/82091824/115904518-d548b780-a49f-11eb-8236-ddb0b383eaf6.gif) 번의 연산이 필요하다.  ![CodeCogsEqn (30)](https://user-images.githubusercontent.com/82091824/115904895-4d16e200-a4a0-11eb-875d-1ef0ac6b3504.gif) 이므로, 시간복잡도는 약  ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/82091824/115876522-62304880-a481-11eb-9ce5-d29a375b6247.gif) 이다
+
+  
 ## 2. 코드설명
+
+
+
 ### (1) **행렬 값 *Input Method***
 ```java
     public static int[][] init_matrix(int n){
@@ -62,8 +83,12 @@
         return matrix;
     }
 ```
-- **random 객체를 생성하고 *for* 문을 이용해 ![CodeCogsEqn (13)](https://user-images.githubusercontent.com/82091824/115889827-4338b300-a48f-11eb-8131-b8ed38a5dc13.gif) 행렬에 0~9사이의 난수를 *input*한다.**
+- random 객체를 생성하고 *for* 문을 이용해 ![CodeCogsEqn (13)](https://user-images.githubusercontent.com/82091824/115889827-4338b300-a48f-11eb-8131-b8ed38a5dc13.gif) 행렬에 0~9사이의 난수를 *input*한다.
+
+
+
 ### (2) **행렬 값 *Print Method***
+
 ```java
     void print_matrix(int[][] matrix){
         for(int i=0; i<matrix.length; i++) {
@@ -73,9 +98,13 @@
             System.out.println();
         }
     } 
-``` 
-- **행렬을 입력받고 *for* 문을 이용해 행렬을 출력한다.**
+```
+- 행렬을 입력받고 *for* 문을 이용해 행렬을 출력한다.
+
+
+
 ### (3) **행렬 *Divide Method***
+
 ```java
  public int[][] subM(int[][] matrix, int a, int b,int n){
         int x= 0;
@@ -91,8 +120,12 @@
         }
         return subM;
 ```
-- **입력받은 행렬을 분할한다. 입력받은 행렬의 1/4의 크기를 가진 행렬 subM을 생성한 뒤, *for* 문을 이용해 subM\[0\~n]\[0\~n] = matrix\[a\~a+n]\[b\~b+n] 으로 초기화한다.**
+- 입력받은 행렬을 분할한다. 입력받은 행렬의 1/4의 크기를 가진 행렬 subM을 생성한 뒤, *for* 문을 이용해 subM\[0\~n]\[0\~n] = matrix\[a\~a+n]\[b\~b+n] 으로 초기화한다.
+
+
+
 ### (4) **행렬 *Merge* *Method***
+
 ```java
     public int[][] merge_subM(int n, int[][] c11, int[][] c12, int[][] c21, int[][] c22){
         int[][] mergeM = new int[n+n][n+n];
@@ -107,8 +140,12 @@
         return mergeM;
     }
 ```
-- **분할된 행렬 c11, c12, c21, c22를 하나의 행렬 C로 합친다. C = {{c11,c12},{c21,c22}}**
+- 분할된 행렬 c11, c12, c21, c22를 하나의 행렬 C로 합친다. C = {{c11,c12},{c21,c22}}
+
+
+
 ### (5) **행렬 x *Method***
+
 ```java
     public int[][] Mmul(int[][] matrixA, int[][] matrixB){
         int[][] Mmul = new int[matrixA.length][matrixB[0].length];
@@ -122,8 +159,12 @@
         return Mmul;
     }
 ```
-- ***for* 문을 이용한 행렬 * 행렬**
+- *for* 문을 이용한 행렬 * 행렬
+
+
+
 ### (6) **행렬 + *Method***
+
 ```java
     public int[][] Msum(int[][] matrixA, int[][] matrixB){
         int[][] Msum = new int[matrixA.length][matrixA[0].length];
@@ -134,8 +175,12 @@
         return Msum;
     }
 ```
-- ***for* 문을 이용한 행렬 + 행렬**
+- *for* 문을 이용한 행렬 + 행렬
+
+
+
 ### (7) **행렬 - *Method***
+
 ```java
     public int[][] Msub(int[][] matrixA, int[][] matrixB){
         int[][] Msub = new int[matrixA.length][matrixA[0].length];
@@ -146,8 +191,12 @@
         return Msub;
     }
 ```
-- ***for* 문을 이용한 행렬 - 행렬**
+- *for* 문을 이용한 행렬 - 행렬
+
+
+
 ### (8) ***Strassen Algorthm***
+
 ```java
     public int[][] Strassen(int n, int[][] matrixA, int[][] matrixB){
 
@@ -185,17 +234,23 @@
 
     }
 ```
-- **if(n < 2 또는 n % 2 != 0) 기본 Algorithm으로 계산한 값을 return 한다.**
-- **else**
-- **matrixA와 matrixB를 subM Method를 이용해 각각 4개의 행렬로 분할한다.**
-- **행렬 M을 생성한 뒤 Strassen을 재귀호출 하면서 값을 초기화 한다.**
-- **행렬 c를 생성한 뒤 Msum, Msub Merthod를 이용해 행렬 M을 조합해 초기화 한다.**
-- **분할된 행렬 c11, c12 ,c21, c22를 merge_subM Method를 이용해 합병한 뒤 return한다.**
-<br><br/>
+- if(n < 2 또는 n % 2 != 0) **기본 Algorithm**으로 계산한 값을 return 한다.
+- else
+- matrixA와 matrixB를 **subM Method**를 이용해 각각 4개의 행렬로 분할한다.
+- 행렬 M을 생성한 뒤 **Strassen을** 재귀호출 하면서 값을 초기화 한다.
+- 행렬 c를 생성한 뒤 **Msum, Msub Merthod**를 이용해 행렬 M을 조합해 초기화 한다.
+- 분할된 행렬 c11, c12 ,c21, c22를 **merge_subM Method**를 이용해 합병한 뒤 return한다.
+
+
+
 ## 3. ***Debugging***
+
+
+
 ### **(1) 문제 발생** 
-- **n값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 에러 발생.**
- 
+
+- n값이 ![CodeCogsEqn (31)](https://user-images.githubusercontent.com/82091824/115957892-0678c480-a540-11eb-8109-8312954becfe.gif) 형태일때만 제대로 된 값이 출력되고, 그 외에는 에러 발생.
+
  *ex)*
 ``` java
 n = 10
@@ -230,9 +285,13 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 4 out
 	at Main.Strassen(Main.java:112)
 	at Main.main(Main.java:136)
 ```
+
+
+
  ### **(2) 문제 발생 이유** 
- - **행렬을 분할할때 행과 열의 마지막 인덱스는 누락되고 분할되어 발생하는 문제같다.**
- 
+
+ - 행렬을 분할할때 행과 열의 마지막 인덱스는 누락되고 분할되어 발생하는 문제같다.
+
  *ex)*
 ```java
 if n = 5
@@ -247,29 +306,43 @@ suba22 = subM(matrixA,2,2,2);    // matrixA의 행 2~3, 열 2~3 값을 suba22에
 <p align="center"><img src="https://user-images.githubusercontent.com/82091824/115961892-78a6d480-a553-11eb-9960-ee8ee90592aa.gif"></p>
 
 ### **(3) 문제 해결** 
- - **이 문제를 해결하기 위해 오른쪽 사진처럼 분할할 시 정사각행렬이 깨져 *Strassen Algorithm*이 돌아가질 않는다... 행렬을 정사각행렬로 변환해주는 추가적인 코드가 필요할 것 같다. *but* 내 코딩실력의 한계로 문제해결을 못했다... 그래서 일단은 *n*값에 홀수가 들어오면 기본 *Algorithm*으로 계산한 값을 return 하는 것으로 수정하였다.**
+ - 이 문제를 해결하기 위해 오른쪽 사진처럼 분할할 시 정사각행렬이 깨져 Strassen Algorithm이 돌아가질 않는다... 행렬을 정사각행렬로 변환해주는 추가적인 코드가 필요할 것 같다. *but* 내 코딩실력의 한계로 문제해결을 못했다... 그래서 일단은 *n*값에 홀수가 들어오면 기본 Algorithm으로 계산한 값을 return 하는 것으로 수정하였다.
 ```java
-수정 전                                                   수정 후
-if(n < 2){                                                if(n < 2 || n % 2 != 0){
-    int[][] matrixC = Mmul(matrixA,matrixB);                  int[][] matrixC = Mmul(matrixA,matrixB);
-    return matrixC;                                           return matrixC;
-}                                                         }
+수정 전                                                   
+if(n < 2){                                                
+    int[][] matrixC = Mmul(matrixA,matrixB);                  
+    return matrixC;                                          
+}  
+         
+수정 후
+if(n < 2 || n % 2 != 0){                                                
+    int[][] matrixC = Mmul(matrixA,matrixB);                  
+    return matrixC;                                          
+}  
 ```
+
+
+
 ## 4. 성능 분석
-- **자바에서 아래의 코드를 사용하여 성능 테스트를 진행하였다.**
+
+- 자바에서 아래의 코드를 사용하여 성능 테스트를 진행하였다.
 ```java
 	long start1 = System.currentTimeMillis();
-        int[][] matrixC = test.Mmul(matrixA,matrixB);
-        long finish1 = System.currentTimeMillis();
+    int[][] matrixC = test.Mmul(matrixA,matrixB);
+    long finish1 = System.currentTimeMillis();
 
-        long start2 = System.currentTimeMillis();
-        int[][] matrixC2 = test.Strassen(n,matrixA,matrixB);
-        long finish2 = System.currentTimeMillis();
+    long start2 = System.currentTimeMillis();
+    int[][] matrixC2 = test.Strassen(n,matrixA,matrixB);
+    long finish2 = System.currentTimeMillis();
 	
 	System.out.println("기본 Algorithm: " + (finish1-start1) + "ms");
-        System.out.println("Strassen Algorithm: " + (finish2-start2) + "ms");
+    System.out.println("Strassen Algorithm: " + (finish2-start2) + "ms");
 ```
+
+
+
 ### (1) 결과
+
 - **n = 2**
 ```java
 기본 Algorithm: 0ms
@@ -322,10 +395,16 @@ Strassen Algorithm: 28000ms
 Strassen Algorithm: 169949ms
 ```
 
+
+
 ### (2) 결론
-- **n에 1024이하의 값이 입력될때는 *Strassen Algorithm*이 기본 *Algorithm*보다 효율이 많이 떨어지는 걸로 나왔다. 아마 내가 코드를 잘못 짰거나, *Strassen Algorithm*이 기본 *Algorithm*의 속도를 역전할라면 엄청 큰 n이 입력되어야 될 것으로 예상된다. *Strassen Algorithm*은 코드를 짜는것도 어렵고 기본 *Algorithm*이랑 비교해 성능이 더 좋은지도 잘 모르겠다.. 만약 내가 엄청 큰 행렬의 곱을 구하는 경우가 아니라면 기본 *Algorithm*으로 구현하는게 더 좋을 것 같다.**
-<br><br/>
+
+- n에 1024이하의 값이 입력될때는 Strassen Algorithm이 기본 Algorithm보다 효율이 많이 떨어지는 걸로 나왔다. 아마 내가 코드를 잘못 짰거나, Strassen Algorithm이 기본 Algorithm의 속도를 역전할라면 엄청 큰 n이 입력되어야 될 것으로 예상된다. Strassen Algorithm은 코드를 짜는것도 어렵고 기본 Algorithm이랑 비교해 성능이 더 좋은지도 잘 모르겠다.. 만약 내가 엄청 큰 행렬의 곱을 구하는 경우가 아니라면 기본 Algorithm으로 구현하는게 더 좋을 것 같다.
+
+
+
 ## 5. 소스 코드
+
 ```java
 import java.util.Random;
 import java.util.Scanner;
