@@ -254,7 +254,8 @@ if(n < 2){                                                if(n < 2 || n % 2 != 0
     int[][] matrixC = Mmul(matrixA,matrixB);                  int[][] matrixC = Mmul(matrixA,matrixB);
     return matrixC;                                           return matrixC;
 }                                                         }
-```     
+```
+<br><br/>
 ## 4. 성능 분석
 - **자바에서 아래의 코드를 사용하여 성능 테스트를 진행하였다.**
 ```java
@@ -324,7 +325,7 @@ Strassen Algorithm: 169949ms
 
 ### (2) 결론
 - **n에 1024이하의 값이 입력될때는 *Strassen Algorithm*이 기본 *Algorithm*보다 효율이 많이 떨어지는 걸로 나왔다. 아마 내가 코드를 잘못 짰거나, *Strassen Algorithm*이 기본 *Algorithm*의 속도를 역전할라면 엄청 큰 n이 입력되어야 될 것으로 예상된다. *Strassen Algorithm*은 코드를 짜는것도 어렵고 기본 *Algorithm*이랑 비교해 성능이 더 좋은지도 잘 모르겠다.. 만약 내가 엄청 큰 행렬의 곱을 구하는 경우가 아니라면 기본 *Algorithm*으로 구현하는게 더 좋을 것 같다.**
-
+<br><br/>
 ## 5. 소스 코드
 ```java
 import java.util.Random;
