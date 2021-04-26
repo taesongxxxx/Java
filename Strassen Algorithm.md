@@ -256,7 +256,16 @@ if(n < 2){                                                if(n < 2 || n % 2 != 0
 }                                                         }
 ```     
 ## 4. 성능 분석
+- **자바에서 아래의 코드를 사용하여 성능 테스트를 진행하였다.
+```java
+	long start1 = System.currentTimeMillis();
+        int[][] matrixC = test.Mmul(matrixA,matrixB);
+        long finish1 = System.currentTimeMillis();
 
+        long start2 = System.currentTimeMillis();
+        int[][] matrixC2 = test.Strassen(n,matrixA,matrixB);
+        long finish2 = System.currentTimeMillis();
+```
 ## 5. 결론
 
 ## 6. 전체 코드
