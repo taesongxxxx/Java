@@ -24,7 +24,7 @@
     
 ### (2) 선택 정렬
 
-![image](https://user-images.githubusercontent.com/82091824/116998564-637f3200-ad19-11eb-9dff-a890b9b0e411.png)
+![image](https://user-images.githubusercontent.com/82091824/116998564-637f3200-ad19-11eb-9dff-a890b9b0e411.png)    
 **▲ 선택 정렬 수행과정**
 - 주어진 배열에서 최소값을 찾고, 그 값을 배열의 맨 앞에 위치한 값과 자리를 바꾼다. 맨 처음 인덱스를 제외한 나머지 배열을 같은 방법으로 교체한다. 이 과정을 (n-1)만큼 반복한다.   
 - 시간 복잡도: ![CodeCogsEqn (34)](https://user-images.githubusercontent.com/82091824/116996511-7f350900-ad16-11eb-8118-1fb1aa3ba8e6.gif)
