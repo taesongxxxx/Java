@@ -43,13 +43,51 @@
 - 입력 크기가 매우크지 않은 경우에 매우 좋은 성능을 보여준다.
 #### 단점
 - 간격을 잘못 설정할 경우, 좋지않은 성능을 보여줄 수도 있다.
+
 ## 2. 코드 구현
 
 ### (1) 버블 정렬
-### (2) 선택 정렬
-### (3) 삽입 정렬
-### (4) 쉘 정렬
+```java
+    public int[] Bubble(int[] A){
+        for(int pass=1; pass<=A.length-1; pass++)
+            for(int i=1; i<=A.length-pass; i++)
+                if(A[i-1] > A[i])
+                   swap(A,i-1,i);
+        return A;
+    }
 
+```
+### (2) 선택 정렬
+```java
+    public int[] Selection(int[] A){
+        for(int i=0; i<A.length-1; i++){
+            int min = i;
+            for(int j=i+1; j<A.length; j++){
+                if(A[j] < A[min])
+                    min = j;
+            }
+            swap(A,i,min);
+        }
+        return A;
+```
+### (3) 삽입 정렬
+```java
+   public int[] Insertion(int[] A){
+        for(int i=1; i<A.length; i++){
+            int CurrentElement = A[i];
+            int j = i-1;
+            while(j>=0 && A[j]>CurrentElement){
+                A[j+1] = A[j];
+                j=j-1;
+            }
+            A[j+1] = CurrentElement;
+        }
+        return A;
+    }
+```
+### (4) 쉘 정렬
+```java
+```
 ## 3. 성능 분석
 
 
