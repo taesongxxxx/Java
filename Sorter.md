@@ -104,6 +104,20 @@
 ```
 ### (4) 쉘 정렬
 ```java
+    public int[] Shell(int[] A){
+        for(int gap=A.length/2; gap>=1; gap /= 2){
+            for(int i=gap; i<A.length; i++){
+                int CurrentElement = A[i];
+                int j = i;
+                while(j>=gap && A[j-gap]>CurrentElement){
+                    A[j]=A[j-gap];
+                    j=j-gap;
+                }
+                A[j]=CurrentElement;
+            }
+        }
+        return A;
+    }
 ```
 ## 3. 성능 분석
 
