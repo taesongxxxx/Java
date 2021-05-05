@@ -120,7 +120,12 @@
     }
 ```
 ## 3. 성능 분석
-
+**아래의 코드를 사용하여 성능분석을 진행하였다. 정렬은 오름차순으로 한다.
+```java
+        long start1 = System.currentTimeMillis();
+        sorter.Bubble(A1);
+        long finshi1 = System.currentTimeMillis();
+```
 **▼n = 1000**
 |상태\정렬|버블 정렬|선택 정렬|삽입 정렬|쉘 정렬|
 |:---:|:---:|:---:|:---:|:---:|
