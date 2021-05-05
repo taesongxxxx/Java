@@ -123,3 +123,184 @@
 
 
 ## 4. 결론
+
+## 5. 소스코드
+```java
+import java.util.Random;
+
+interface type{
+    public void random(int[] A);
+    public void descending(int[] A);
+    public void almost(int[] A);
+}
+
+public class Sorter implements type{
+
+    public void random(int[] A){            //랜덤 정렬
+        Random r = new Random();
+        for(int i=0; i<A.length; i++)
+            A[i] = r.nextInt(1000);
+    }
+
+    public void descending(int[] A){        //내림차순 정렬
+        int[] B = new int[A.length];
+        for(int i=0; i<A.length; i++)
+            B[i] = A[i];
+        for(int i=0; i<A.length; i++)
+            A[i] = B[A.length-(1+i)];
+    }
+
+    public void almost(int[] A){             //거의 정렬
+        Random r = new Random();
+        for(int i=0; i<A.length/10; i++){
+            swap(A,r.nextInt(A.length-1),r.nextInt(A.length-1));
+        }
+    }
+
+    public void swap(int[] A, int index1, int index2){
+        int temp = A[index1];
+        A[index1] = A[index2];
+        A[index2] = temp;
+    }
+
+    public int[] Bubble(int[] A){           //버블 정렬
+        for(int pass=1; pass<=A.length-1; pass++)
+            for(int i=1; i<=A.length-pass; i++)
+                if(A[i-1] > A[i])
+                   swap(A,i-1,i);
+        return A;
+    }
+
+    public int[] Selection(int[] A){        //선택 정렬
+        for(int i=0; i<A.length-1; i++){
+            int min = i;
+            for(int j=i+1; j<A.length; j++){
+                if(A[j] < A[min])
+                    min = j;
+            }
+            swap(A,i,min);
+        }
+        return A;
+    }
+
+    public int[] Insertion(int[] A){        //삽입 정렬
+        for(int i=1; i<A.length; i++){
+            int CurrentElement = A[i];
+            int j = i-1;
+            while(j>=0 && A[j]>CurrentElement){
+                A[j+1] = A[j];
+                j=j-1;
+            }
+            A[j+1] = CurrentElement;
+        }
+        return A;
+    }
+
+    public int[] Shell(int[] A){            //쉘 정렬
+        for(int gap=A.length/2; gap>=1; gap /= 2){
+            for(int i=gap; i<A.length; i++){
+                int CurrentElement = A[i];
+                int j = i;
+                while(j>=gap && A[j-gap]>CurrentElement){
+                    A[j]=A[j-gap];
+                    j=j-gap;
+                }
+                A[j]=CurrentElement;
+            }
+        }
+        return A;
+    }
+
+    public static void main(String[] args) {
+        Sorter sorter = new Sorter();
+        int n = 1000;
+        int[] A1 = new int[n];
+        int[] A2 = new int[n];
+        int[] A3 = new int[n];
+        int[] A4 = new int[n];
+
+        sorter.random(A1);
+        for (int i=0; i<A1.length; i++) A2[i] = A1[i];
+        for (int i=0; i<A1.length; i++) A3[i] = A1[i];
+        for (int i=0; i<A1.length; i++) A4[i] = A1[i];
+
+        long start1 = System.currentTimeMillis();
+        sorter.Bubble(A1);
+        long finshi1 = System.currentTimeMillis();
+
+        long start2 = System.currentTimeMillis();
+        sorter.Selection(A2);
+        long finshi2 = System.currentTimeMillis();
+
+        long start3 = System.currentTimeMillis();
+        sorter.Insertion(A3);
+        long finshi3 = System.currentTimeMillis();
+
+        long start4 = System.currentTimeMillis();
+        sorter.Shell(A4);
+        long finshi4 = System.currentTimeMillis();
+
+        System.out.println("Random -> 오름차순");
+        System.out.println("버블 정렬: "+(finshi1-start1)+ "ms");
+        System.out.println("선택 정렬: "+(finshi2-start2)+ "ms");
+        System.out.println("삽입 정렬: "+(finshi3-start3)+ "ms");
+        System.out.println("쉘 정렬: "+(finshi4-start4)+ "ms");
+        System.out.println();
+
+        sorter.descending(A1);
+        sorter.descending(A2);
+        sorter.descending(A3);
+        sorter.descending(A4);
+
+        start1 = System.currentTimeMillis();
+        sorter.Bubble(A1);
+        finshi1 = System.currentTimeMillis();
+
+        start2 = System.currentTimeMillis();
+        sorter.Selection(A2);
+        finshi2 = System.currentTimeMillis();
+
+        start3 = System.currentTimeMillis();
+        sorter.Insertion(A3);
+        finshi3 = System.currentTimeMillis();
+
+        start4 = System.currentTimeMillis();
+        sorter.Shell(A4);
+        finshi4 = System.currentTimeMillis();
+
+        System.out.println("내림차순 -> 오름차순");
+        System.out.println("버블 정렬: "+(finshi1-start1)+ "ms");
+        System.out.println("선택 정렬: "+(finshi2-start2)+ "ms");
+        System.out.println("삽입 정렬: "+(finshi3-start3)+ "ms");
+        System.out.println("쉘 정렬: "+(finshi4-start4)+ "ms");
+        System.out.println();
+
+        sorter.almost(A1);
+        sorter.almost(A2);
+        sorter.almost(A3);
+        sorter.almost(A4);
+
+        start1 = System.currentTimeMillis();
+        sorter.Bubble(A1);
+        finshi1 = System.currentTimeMillis();
+
+        start2 = System.currentTimeMillis();
+        sorter.Selection(A2);
+        finshi2 = System.currentTimeMillis();
+
+        start3 = System.currentTimeMillis();
+        sorter.Insertion(A3);
+        finshi3 = System.currentTimeMillis();
+
+        start4 = System.currentTimeMillis();
+        sorter.Shell(A4);
+        finshi4 = System.currentTimeMillis();
+
+        System.out.println("거의 정렬 -> 오름차순");
+        System.out.println("버블 정렬: "+(finshi1-start1)+ "ms");
+        System.out.println("선택 정렬: "+(finshi2-start2)+ "ms");
+        System.out.println("삽입 정렬: "+(finshi3-start3)+ "ms");
+        System.out.println("쉘 정렬: "+(finshi4-start4)+ "ms");
+    }
+}
+```
