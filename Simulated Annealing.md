@@ -1,5 +1,5 @@
 # 모의 담금질 기법
-***
+
 
 ![Hill_Climbing_with_Simulated_Annealing](https://user-images.githubusercontent.com/82091824/120922713-aad85400-c705-11eb-9a9a-74e07b66f818.gif)
 
